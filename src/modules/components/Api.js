@@ -7,11 +7,7 @@ const apiGetRequest = (url, apiName, params={}) => {
 	console.log("Get Request to " + apiName);
 	return axios.get(url, params)
 	.then(res => {
-		if (res.headers['content-type'] == "image/png") {
-			return res.data;
-		} else {
-			return res.data;
-		}
+		return res.data;
 	})
 	.catch(error => {
 		console.log(error);

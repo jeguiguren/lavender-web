@@ -8,11 +8,10 @@ import Typography from '../components/Typography';
 
 const styles = (theme) => ({
   root: {
-	marginTop: theme.spacing(8),
 	marginBottom: theme.spacing(4),
   },
   images: {
-	marginTop: theme.spacing(8),
+	marginTop: theme.spacing(6),
 	display: 'flex',
 	flexWrap: 'wrap',
   },
@@ -93,15 +92,12 @@ function ProductTables(props) {
   	return (
 		<Container className={classes.root} component="section" ref={myRef}
 			>
-		  <Typography variant="h4" marked="center" align="center" component="h2">
-			Pick a table
-		  </Typography>
 		  <div className={classes.images}>
 			{tables.map((table, idx) => {
 
 				const imageOne = 'https://www.toptal.com/designers/subtlepatterns/patterns/spikes.png';
 				const imageTwo = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSGWRePNs4x7UaA84gnEJq3gpHjEg84wN2GLw&usqp=CAU';
-				const imageUrl = idx % 2 == 0 ? imageOne : imageTwo;
+				const imageUrl = idx % 2 === 0 ? imageOne : imageTwo;
 
 				return (
 			  <ButtonBase

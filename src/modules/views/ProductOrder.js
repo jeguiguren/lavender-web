@@ -1,21 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import ButtonBase from '@material-ui/core/ButtonBase';
 import Container from '@material-ui/core/Container';
 import Typography from '../components/Typography';
 
 import Grid from '@material-ui/core/Grid';
-
-
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListSubheader from '@material-ui/core/ListSubheader';
-
 import Fab from '@material-ui/core/Fab';
-import RemoveIcon from '@material-ui/icons/Remove';
 import AddIcon from '@material-ui/icons/Add';
 
 
@@ -138,8 +133,8 @@ function ScrollableList(props) {
 						</Fab>
 			        </ListItemSecondaryAction>
 			    	}
-			    	{item.count && !onClick &&
-			        <ListItemSecondaryAction onClick={() => onClick(item)}>
+			    	{!onClick &&
+			        <ListItemSecondaryAction>
 			        	<Fab size="small" color="primary" aria-label="add">
 						  	{item.count}
 						</Fab>
@@ -159,10 +154,6 @@ function ProductOrder(props) {
 	
 	return (
 		<Container className={classes.root} component="section" ref={myRef}>
-		  	<Typography variant="h4" marked="center" align="center" component="h2">
-				Place an Order
-		  	</Typography>
-
 			 <Typography variant="h5" component="h5">
 				{restaurant?.restaurant_name}
 		  	</Typography>

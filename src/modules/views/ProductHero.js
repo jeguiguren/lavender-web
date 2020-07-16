@@ -39,7 +39,7 @@ function ProductHero(props) {
       <Typography color="inherit" align="center" variant="h1" marked="center">
         Welcome to Lavender
       </Typography>
-      <Typography color="inherit" align="center" variant="h5" className={classes.h5}>
+      <Typography color="inherit" align="center" variant="h6" className={classes.h5}>
         Revolutionizing the dining industry
       </Typography>
       <Button
@@ -50,7 +50,7 @@ function ProductHero(props) {
         component="a"
         onClick={props.onStartClick}
       >
-        Get Started
+        Ckeck it out
       </Button>
     </ProductHeroLayout>
   );

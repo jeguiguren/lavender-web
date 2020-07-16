@@ -9,7 +9,6 @@ import Typography from '../components/Typography';
 const styles = (theme) => ({
   root: {
     display: 'flex',
-    backgroundColor: theme.palette.secondary.light,
     overflow: 'hidden',
   },
   container: {
@@ -51,8 +50,26 @@ const styles = (theme) => ({
   },
 });
 
+const steps = [
+  {
+    title: 'Check in',
+    summary: 'Summary',
+    image: require('../StepQR.png')
+  },
+  {
+    title: 'Order and enjoy',
+    summary: 'Summary',
+    image: require('../StepOrder.png')
+  },
+  {
+    title: 'Leave when you want',
+    summary: 'Summary',
+    image: require('../StepLeave.jpg')
+  },
+]
+
 function ProductHowItWorks(props) {
-  const { classes } = props;
+  const { classes, onClick } = props;
 
   return (
     <section className={classes.root}>
@@ -62,51 +79,23 @@ function ProductHowItWorks(props) {
           className={classes.curvyLines}
           alt="curvy lines"
         />
-        <Typography variant="h4" marked="center" className={classes.title} component="h2">
-          How it works
-        </Typography>
         <div>
           <Grid container spacing={5}>
-            <Grid item xs={12} md={4}>
-              <div className={classes.item}>
-                <div className={classes.number}>1.</div>
-                <img
-                  src="/static/themes/onepirate/productHowItWorks1.svg"
-                  alt="suitcase"
-                  className={classes.image}
-                />
-                <Typography variant="h5" align="center">
-                  Appointment every Wednesday 9am.
-                </Typography>
-              </div>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <div className={classes.item}>
-                <div className={classes.number}>2.</div>
-                <img
-                  src="/static/themes/onepirate/productHowItWorks2.svg"
-                  alt="graph"
-                  className={classes.image}
-                />
-                <Typography variant="h5" align="center">
-                  First come, first served. Our offers are in limited quantities, so be quick.
-                </Typography>
-              </div>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <div className={classes.item}>
-                <div className={classes.number}>3.</div>
-                <img
-                  src="/static/themes/onepirate/productHowItWorks3.svg"
-                  alt="clock"
-                  className={classes.image}
-                />
-                <Typography variant="h5" align="center">
-                  {'New offers every week. New experiences, new surprises. '}
-                  {'Your Sundays will no longer be alike.'}
-                </Typography>
-              </div>
-            </Grid>
+            {steps.map((step, idx) => 
+              <Grid item xs={12} md={4}>
+                <div className={classes.item}>
+                  <div className={classes.number}>{idx + 1}.</div>
+                  <img
+                    src={step.image}
+                    alt="suitcase"
+                    className={classes.image}
+                  />
+                  <Typography variant="h5" align="center">
+                    {step.title}
+                  </Typography>
+                </div>
+              </Grid>
+              )}
           </Grid>
         </div>
         <Button
@@ -115,7 +104,7 @@ function ProductHowItWorks(props) {
           variant="contained"
           className={classes.button}
           component="a"
-          href="/premium-themes/onepirate/sign-up/"
+          onClick={onClick}
         >
           Get started
         </Button>

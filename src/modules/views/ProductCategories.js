@@ -1,21 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Container from '@material-ui/core/Container';
 import Typography from '../components/Typography';
 
-import { getRestaurant, getRestaurants } from '../components/Api';
-import Checkout from '../checkout/Checkout';
-
 
 const styles = (theme) => ({
   root: {
-	marginTop: theme.spacing(8),
+
 	marginBottom: theme.spacing(4),
   },
   images: {
-	marginTop: theme.spacing(8),
+	marginTop: theme.spacing(6),
 	display: 'flex',
 	flexWrap: 'wrap',
   },
@@ -90,17 +87,13 @@ const styles = (theme) => ({
 
 function ProductCategories(props) {
 
-  const { classes, restaurants, onRestaurantClick, myRef } = props;
+  const { classes, restaurants, onRestaurantClick, } = props;
 			
   return (
-	<Container className={classes.root} component="section" ref={myRef}
-			>
-	  <Typography variant="h4" marked="center" align="center" component="h2">
-		Pick a restaurant
-	  </Typography>
+	<Container className={classes.root} component="section">
 	  <div className={classes.images}>
 		{restaurants.map((restaurant, idx) => {
-			const { restaurant_id, restaurant_name, restaurant_address, restaurant_avatar_urls } = restaurant;
+			const { restaurant_name, restaurant_avatar_urls } = restaurant;
 			return (
 
 		

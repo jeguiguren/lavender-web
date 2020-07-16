@@ -21,11 +21,10 @@ function Copyright() {
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    backgroundColor: 'gray'
+    backgroundColor: '#555555'
   },
   container: {
-    marginTop: theme.spacing(8),
-    marginBottom: theme.spacing(8),
+    marginTop: theme.spacing(7),
     display: 'flex',
   },
   iconsWrapper: {

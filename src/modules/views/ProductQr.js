@@ -93,9 +93,6 @@ function ProductQr(props) {
 	const { classes, myRef, onDoneClick, qrCode } = props;
 	return (
 		<Container className={classes.root} component="section" ref={myRef}>
-		  <Typography variant="h4" marked="center" align="center" component="h2">
-			Scan the QR Code
-		  </Typography>
 		  {qrCode && 
 		  	<div className={classes.images}>
 				<img  src={URL.createObjectURL(qrCode)} alt="fireSpot"/>
